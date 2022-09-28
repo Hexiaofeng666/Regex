@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            [abc] 匹配[...]的所有字符
+
+            [^abc] 取反，除了[...]的其他字符
+
+            [A-Z] 区间字母A到Z
+
+            . 匹配除（\n换行符 \r 回车符）的任何单个字符
+
+            \s \S 匹配所有，\s所有空白符，包括换行 \S非空白符，不包括换行
+
+            \w 匹配字母、数字、下划线
+        */ 
+        var str = 'Hello World, my name is hxf';
+        console.log(str.match(/[abc]/g));//['a']
+        console.log(str.match(/[^abcdefghijklmn]/g));// ['H', 'o', ' ', 'W', 'o', 'r', ',', ' ', 'y', ' ', ' ', 's', ' ', 'x']
+        console.log(str.match(/[A-Z]/g));// ['H', 'W']
+        console.log(str.match(/h.llo/ig));//['Hello']
+        console.log(str.match(/\s/g));//[' ', ' ', ' ', ' ', ' ']
+        console.log(str.match(/\w/g));//['H', 'e', 'l', 'l', 'o', 'W', 'o', 'r', 'l', 'd', 'm', 'y', 'n', 'a', 'm', 'e', 'i', 's', 'h', 'x', 'f']
+    </script>
+</body>
+</html>

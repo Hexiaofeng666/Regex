@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。
+        var patt = /ee/;
+        const result = patt.test("The best things in life are free!"); //是否含有"e"
+        console.log(result); //true
+
+
+        
+        const string = "The best things in life are free!"
+        const patt1 = /ee/
+        const patt2 = /hello/
+        console.log(patt1.test(string)); //true
+        console.log(patt2.test(string)); //false
+
+    </script>
+</body>
+</html>

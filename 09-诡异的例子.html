@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date = new Date().toLocaleTimeString('chinese', { hour12: false })//当前时分秒，例如9:38:06
+        console.log(date.match(/^([01]\d|2[01234]):([0-5]\d|60)/g)); //['09:38'],匹配当前时分
+        console.log('有点意思abcd123456'.match(/[\u4e00-\u9fa5]/g)); //['有', '点', '意', '思']
+        
+        var str1 = '身高:178，体重：138，学号：318123456，密码:962495'
+        // 打印出str1中所有的数字
+        console.log(str1.match(/\d+/g)); //['178', '138', '318123456', '962495']
+        // 打印出str1中所有的汉字
+        console.log(str1.match(/[\u4e00-\u9fa5]+/g)); //['身高', '体重', '学号', '密码']
+
+        var email1 = 'email@qq.vip.com'
+        var email2 = '12525@qq.com'
+        // 分为两个部分，第一个部分[\w]+用于匹配邮箱的名称，第二个部分[\w]+(.[A-Za-z]+){1,2}用于匹配域名。
+        // \w表示匹配数字、字母、下划线，[\w]+表示匹配一个或多个数字、字母、下划线；[A-Za-z]用于匹配一个字母，
+        // [A-Za-z]+用于匹配一个或多个字母，.[A-Za-z]+用于匹配以.（点号）开头并连接一个或多个字母，
+        // {1,2}表示匹配表达式(.[A-Za-z]+)一次或者两次。
+        var regexp = /[\w]+@[A-Za-z]+(\.[A-Za-z0-9]+){1,2}\b/g
+        console.log(email1.match(regexp)); //['email@qq.vip.com']
+        console.log(email2.match(regexp)); //['12525@qq.com']
+    </script>
+</body>
+</html>

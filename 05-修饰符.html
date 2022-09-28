@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // i	执行对大小写不敏感的匹配。
+        // g	执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。
+        // m	执行多行匹配。
+
+        // i:不区分(ignore)大小写；
+        // 例如：/abc/i 可以匹配 abc、aBC、Abc 
+
+        // g：全局(global)匹配
+        // 如果不带g，正则过程中字符串从左到右匹配，找到第一个符合条件的即匹配成功，返回
+        // 如果带g，则字符串从左到右，找到每个符合条件的都记录下来，知道字符串结尾位置
+
+        // m多(more)行匹配
+        // 若存在换行\n并且有开始^或结束$符的情况下，和g一起使用实现全局匹配。
+        // 因为存在换行时默认会把换行符作为一个字符，任务匹配字符串是个单行，g只匹配第一行，添加m之后实现多行，每个换行符之后就是开始。
+        var str = "abcggab\nabcoab2acbaaaa";
+        var preg1 = /^abc/gm;
+        str.match(preg1) // 结果为：["abc", "abc"]
+        var preg2 = /ab$/gm;
+        str.match(preg2) // 结果为：["ab", "ab"]
+
+        var preg3 = /(^[a-z]+)/g
+        console.log(str.match(preg3));
+
+        var preg4 = /^a$/g
+        console.log(str.match(preg4));
+
+        var str = 'test\nbbs';
+        var reg1 = /^b/g;
+        console.log(str.match(reg1)); //null
+        var reg2 = /^b/mg;
+        console.log(str.match(reg2)); //['b']
+
+        console.log(/^123$/.test('123000123')) //false
+        console.log(/(^123)*(123$)/.test('123000123')) //false
+    </script>
+</body>
+
+</html>

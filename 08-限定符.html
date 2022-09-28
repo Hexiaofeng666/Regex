@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            {n} n为非负整数，匹配n次
+
+            {n,} n为非负整数，至少n次
+
+            {n,m} n为非负整数，n<=m,最少n次，最多m次
+        */
+        var str = 'Hello World, my name is hxf.\nwhat is your name?\nsuuuuu san';
+        console.log(str.match(/su{2}/g));//['suu']
+        console.log(str.match(/su{2,}/g));//['suuuuu']
+        console.log(str.match(/su{2,4}/g));//['suuuu']
+    </script>
+</body>
+</html>

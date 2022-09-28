@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            $ 结尾位置 （匹配$字符----\$）
+
+            ^ 开始位置（匹配$字符----\^）
+
+            () 子表达式开始和结束（匹配字符----\(   和  \））
+
+            * 匹配零次或多次（匹配字符----\*）
+
+            + 匹配一次或多次（匹配字符----\+）
+
+            ? 匹配零次或一次（匹配字符----\?）
+
+            | 两项间的一个（匹配字符----\|）
+        */
+        var str = 'Hello World, my name is hxf.\nwhat is your name?\nsuuuuu san';
+        console.log(str.match(/me\?$/mg));//['me?']
+        console.log(str.match(/^what/mg));//['what']
+        console.log(str.match(/(^what).*(name\?$)/mg));//['what is your name?']
+        console.log(str.match(/su*\ssan/mg));//['suuuuu san']
+        console.log(str.match(/s?an/g));//['san']
+        console.log(str.match(/s(a|b)n/g));//['san']
+    </script>
+</body>
+</html>

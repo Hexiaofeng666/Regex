@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'Hello World, my name is hxf';
+        console.log(str.match(/name/)); //结果是一个数组，该数组一共有4项。
+        /*
+            第0项：匹配到字符串
+        　　第1项：groups：undefined，这表示当前的正则表达式没使用分组
+        　　第2项：index表示首次匹配上的子串的起始下标。
+        　　第3项：input，表示源字符串
+        　　第4项：length，表示匹配到的结果个数，由于这里不使用全局匹配，只找到首次匹配项就结束了，所以匹配结果只有1个，length也就是1。
+        */
+
+        // 如果在正则表达式末尾不使用全局匹配符g，在本例中是无法匹配到所有的数字。反过来说就是，如果想匹配所有的符合条件的子串，就必须在正则的末尾添加全局匹配符g
+        // 加了全局修饰符g
+        console.log(str.match(/name/g)); //['name']
+    </script>
+</body>
+
+</html>
